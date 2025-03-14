@@ -1969,7 +1969,8 @@ GameObject:
   - component: {fileID: 7168535520726931295}
   - component: {fileID: -4850050087093612016}
   - component: {fileID: -4001823343160716554}
-  m_Layer: 0
+  - component: {fileID: 6338291234983375324}
+  m_Layer: 6
   m_Name: Character_Skeleton_Slave_01 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2069,8 +2070,10 @@ MonoBehaviour:
   curHP: 10
   curCharTarget: {fileID: 0}
   attackRange: 2
+  attackDamage: 3
   attackCoolDown: 2
   attackTimer: 0
+  findingRange: 20
 --- !u!114 &-4850050087093612016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,6 +2109,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6338291234983375324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5237da26ee11247b21494f7a3aa0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curEnemy: {fileID: 0}
 --- !u!1 &145006
 GameObject:
   m_ObjectHideFlags: 0

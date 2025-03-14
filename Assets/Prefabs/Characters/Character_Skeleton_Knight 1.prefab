@@ -1263,7 +1263,8 @@ GameObject:
   - component: {fileID: 1727116313207209176}
   - component: {fileID: 6952699775814891030}
   - component: {fileID: 6179753100912163952}
-  m_Layer: 0
+  - component: {fileID: 4248615408861354656}
+  m_Layer: 6
   m_Name: Character_Skeleton_Knight 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1403,8 +1404,10 @@ MonoBehaviour:
   curHP: 10
   curCharTarget: {fileID: 0}
   attackRange: 2
+  attackDamage: 3
   attackCoolDown: 2
   attackTimer: 0
+  findingRange: 20
 --- !u!114 &6179753100912163952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,6 +1420,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffba5a0e3b217f54d904f01b9df8523a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4248615408861354656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5237da26ee11247b21494f7a3aa0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curEnemy: {fileID: 0}
 --- !u!1 &130074
 GameObject:
   m_ObjectHideFlags: 0

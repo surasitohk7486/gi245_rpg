@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RightClick : MonoBehaviour
@@ -5,15 +6,10 @@ public class RightClick : MonoBehaviour
     private Camera cam;
     public LayerMask layerMask;
 
-    private LeftClick leftClick;
-
     public static RightClick instance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    private void Awake()
-    {
-        leftClick = GetComponent<LeftClick>();
-    }
+    
     void Start()
     {
         instance = this;
@@ -30,14 +26,17 @@ public class RightClick : MonoBehaviour
         }
     }
 
-    private void CommandToWalk(RaycastHit hit , Characters c)
+    private void CommandToWalk(RaycastHit hit , List<Characters> heroes)
     {
-        if(c != null)
+        foreach (Characters h in heroes)
         {
-            c.WalkToPosition(hit.point);
+            if (h != null)
+            {
+                h.WalkToPosition(hit.point);
+            }
 
-            CreateVFX(hit.point,VFXManager.instance.DoubleRingMarker);
         }
+        CreateVFX(hit.point,VFXManager.instance.DoubleRingMarker);
     }
 
     private void TryCommand(Vector2 screenPos)
@@ -50,10 +49,10 @@ public class RightClick : MonoBehaviour
             switch (hit.collider.tag)
             {
                 case "Ground":
-                    CommandToWalk(hit,leftClick.CurChar);
+                    CommandToWalk(hit,PartyManager.instance.SelectChars);
                     break;
                 case "Enemy":
-                    CommandToAttack(hit,leftClick.CurChar);
+                    CommandToAttack(hit,PartyManager.instance.SelectChars);
                     break;
                     
             }
@@ -68,15 +67,14 @@ public class RightClick : MonoBehaviour
         Instantiate(vfxPrefab,pos + new Vector3(0f,0.1f,0f),Quaternion.identity);
     }
 
-    private void CommandToAttack(RaycastHit hit, Characters c) 
+    private void CommandToAttack(RaycastHit hit, List<Characters> heroes)
     { 
-        if (c == null)
-            return ;
-
         Characters target = hit.collider.GetComponent<Characters>();
         Debug.Log("Attack: " + target);
 
-        if(target != null)
-            c.ToAttackCharacter(target);
+        foreach (Characters h in heroes)
+        {
+            h.ToAttackCharacter(target);
+        }
     }
 }

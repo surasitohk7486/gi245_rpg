@@ -4372,6 +4372,7 @@ GameObject:
   - component: {fileID: 1240030354191231824}
   - component: {fileID: 5053354247197665552}
   - component: {fileID: 8997470570109126089}
+  - component: {fileID: 4316680100056572808}
   m_Layer: 0
   m_Name: Character_Goblin_Shaman 1
   m_TagString: Untagged
@@ -4503,6 +4504,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  ringSelection: {fileID: 0}
+  curHP: 10
+  curCharTarget: {fileID: 0}
+  attackRange: 2
+  attackDamage: 3
+  attackCoolDown: 2
+  attackTimer: 0
+  findingRange: 20
+--- !u!114 &4316680100056572808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194332}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf5237da26ee11247b21494f7a3aa0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curEnemy: {fileID: 0}
 --- !u!1 &196770
 GameObject:
   m_ObjectHideFlags: 0
