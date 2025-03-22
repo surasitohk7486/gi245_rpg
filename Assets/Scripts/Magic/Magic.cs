@@ -12,6 +12,10 @@ public class Magic
     public string Name { get { return name; } }
 
     [SerializeField]
+    private Sprite icon;
+    public Sprite Icon { get { return icon; } }
+
+    [SerializeField]
     private float range;
     public float Range { get { return range; } }
 
@@ -28,22 +32,23 @@ public class Magic
     public float ShootTime { get {return shootTime; } }
 
     [SerializeField]
-    private int loadID;
-    public int LoadID { get { return loadID; } }
+    private int loadId;
+    public int LoadId { get { return loadId; } }
 
     [SerializeField]
-    private int shootID;
-    public int ShootID { get {return shootID; } }
+    private int shootId;
+    public int ShootId { get {return shootId; } }
 
-    public Magic(int id, string name, float range, int power, float loadTime, float shootTime, int loadID, int shootID)
-    {
-        this.id = id;
-        this.name = name;
-        this.range = range;
-        this.power = power;
-        this.loadTime = loadTime;
-        this.shootTime = shootTime;
-        this.loadID = loadID;
-        this.shootID = shootID;
+    public Magic(MagicData data)
+    { 
+        id = data.id;
+        name = data.magicName;
+        icon = data.icon;
+        range = data.range;
+        power = data.power;
+        loadTime = data.loadTime;
+        shootTime = data.shootTime;
+        loadId = data.loadId;
+        shootId = data.shootId;
     }
 }

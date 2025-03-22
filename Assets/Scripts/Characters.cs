@@ -255,7 +255,7 @@ public abstract class Characters : MonoBehaviour
     {
         if (vfxManager != null)
         {
-            vfxManager.ShootMagic(curMagicCast.ShootID,
+            vfxManager.ShootMagic(curMagicCast.ShootId,
                                   transform.position,
                                   curCharTarget.transform.position,
                                   curMagicCast.ShootTime);
@@ -274,7 +274,7 @@ public abstract class Characters : MonoBehaviour
     private IEnumerator LoadMagicCast(Magic curMagicCast)
     {
         if(vfxManager != null)
-            vfxManager.LoadMagic(curMagicCast.LoadID,
+            vfxManager.LoadMagic(curMagicCast.LoadId,
                                  transform.position,
                                  curMagicCast.LoadTime);
 

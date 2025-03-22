@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 67cb44fbdc202b44e971ac2b57d5ee35
-AssetOrigin:
-  serializedVersion: 1
-  productId: 168372
-  packageName: POLYGON Particle FX - Low Poly 3D Art by Synty
-  packageVersion: 1.3.2
-  assetPath: Assets/Resources/PolygonParticleFX/Textures/PolygonParticles_Texture_01_A.png
-  uploadId: 736254
+guid: 32f492acb42a7784d8dd395e44a97e84
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

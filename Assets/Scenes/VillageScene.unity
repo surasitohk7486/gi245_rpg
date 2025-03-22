@@ -203,7 +203,19 @@ MonoBehaviour:
   m_Group: {fileID: 337182044}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1167497887}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SelectMagicSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &24158079
 GameObject:
@@ -1566,6 +1578,10 @@ MonoBehaviour:
   - {fileID: 1236643204216662, guid: 38ab5ac684398ee46b1eca8ce22bc8e4, type: 3}
   - {fileID: 1722081097931586, guid: e8173873d01cd3149b85e3be5d8b76f3, type: 3}
   - {fileID: 1739096776086156, guid: 03b720b05d32e5e40b2f4932451e2d95, type: 3}
+  magicData:
+  - {fileID: 11400000, guid: 7c3fd467979cc1c4996b3cec826c00e2, type: 2}
+  - {fileID: 11400000, guid: c66ee2e32355eeb40b9203e897bd54d6, type: 2}
+  - {fileID: 11400000, guid: 1b39483a411700f498a5597c5585bb77, type: 2}
 --- !u!1 &387828790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,7 +3886,19 @@ MonoBehaviour:
   m_Group: {fileID: 337182044}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1167497887}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SelectMagicSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &737290065
 GameObject:
@@ -5344,7 +5372,19 @@ MonoBehaviour:
   m_Group: {fileID: 337182044}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1167497887}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SelectMagicSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1101077735 stripped
 GameObject:
@@ -5530,6 +5570,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionBox: {fileID: 179449611}
   togglePauseUnpause: {fileID: 911584644}
+  toggleMagic:
+  - {fileID: 726838006}
+  - {fileID: 1545802853}
+  - {fileID: 1080274345}
+  - {fileID: 17087328}
+  curToggleMagicID: -1
 --- !u!114 &1167497888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6811,7 +6857,19 @@ MonoBehaviour:
   m_Group: {fileID: 337182044}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1167497887}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: SelectMagicSkill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1630582611
 GameObject:
