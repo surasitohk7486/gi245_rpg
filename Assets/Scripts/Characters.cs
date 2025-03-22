@@ -66,8 +66,23 @@ public abstract class Characters : MonoBehaviour
     protected bool isMagicMode = false;
     public bool IsMagicMode { get { return isMagicMode; } set { isMagicMode = value; } }
 
+    [Header("Inventory")]
+    [SerializeField]
+    protected List<Item> inventoryItems;
+    public List<Item> InventoryItems { get { return inventoryItems; } set { inventoryItems = value; } }
+
+    [SerializeField]
+    protected Item mainWeapon;
+    public Item MainWeapon { get { return mainWeapon; } set { mainWeapon = value; } }
+
+    [SerializeField]
+    protected Item shield;
+    public Item Shield { get { return shield; } set { shield = value; } }
+
     protected VFXManager vfxManager;
     protected UIManager uiManager;
+
+  
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
