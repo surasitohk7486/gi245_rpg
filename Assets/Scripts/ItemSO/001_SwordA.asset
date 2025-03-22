@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaddfbea7bf8ee4196aef3c8956060a, type: 3}
   m_Name: 001_SwordA
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  type: 0
-  icon: {fileID: 0}
-  power: 0
+  id: 1
+  itemName: SwordA
+  type: 2
+  icon: {fileID: 21300000, guid: c162d6e6039649245885005c9efba03d, type: 3}
+  power: 20

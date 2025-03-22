@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaddfbea7bf8ee4196aef3c8956060a, type: 3}
   m_Name: 002_ShieldA
   m_EditorClassIdentifier: 
-  id: 0
-  itemName: 
-  type: 0
-  icon: {fileID: 0}
+  id: 2
+  itemName: ShieldA
+  type: 1
+  icon: {fileID: 21300000, guid: 4ee97113e758df644b93dd97bb7ed99b, type: 3}
   power: 0
