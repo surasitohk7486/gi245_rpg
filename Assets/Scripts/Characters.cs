@@ -81,6 +81,7 @@ public abstract class Characters : MonoBehaviour
 
     protected VFXManager vfxManager;
     protected UIManager uiManager;
+    protected InventoryManager invManager;
 
   
     void Awake()
@@ -89,12 +90,13 @@ public abstract class Characters : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void charInit(VFXManager vfxM, UIManager uiM)
+    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
+        invManager = invM;
 
-        inventoryItems = new Item[16];
+        inventoryItems = new Item[InventoryManager.MAXSLOT];
     }
 
     public void SetState(CharState s)
@@ -218,7 +220,11 @@ public abstract class Characters : MonoBehaviour
     {
         navAgent.isStopped = true;
         SetState(CharState.Die);
+
         anim.SetTrigger("Die");
+
+        invManager.SpawnDropInventory(inventoryItems,transform.position);
+
         StartCoroutine(DestroyObject());
     }
 

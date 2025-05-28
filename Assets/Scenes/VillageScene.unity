@@ -1760,6 +1760,7 @@ GameObject:
   - component: {fileID: 367852408}
   - component: {fileID: 367852409}
   - component: {fileID: 367852410}
+  - component: {fileID: 367852411}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1862,7 +1863,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dfad35cdd581f4786536603b4105ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefabs: []
+  itemPrefabs:
+  - {fileID: 2183001951008068311, guid: 1e11a26870fd8dc4f832e24ca6967121, type: 3}
+  - {fileID: 157152, guid: 0b11855de8d5b8c44b7418c575b7ccf3, type: 3}
   itemData:
   - {fileID: 11400000, guid: dbe0b9a2d54edbb458a3fe67ddf447ae, type: 2}
   - {fileID: 11400000, guid: d07486e00a3f120448acb9ed3ce51805, type: 2}
@@ -1870,6 +1873,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a673cd685a37f1b4ca5749d996b09070, type: 2}
   - {fileID: 11400000, guid: 65b2c9e465e8b764caea659b19ef7e4b, type: 2}
   - {fileID: 11400000, guid: 29b0b193d853cf14da7ff4c1c9695e81, type: 2}
+--- !u!114 &367852411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367852404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc7abc7167640342b72e47499d26a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 795330526}
 --- !u!1 &387828790
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,8 +4103,12 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3376339740239898004, guid: 11ffba29df14c054aa5a2695b18e9f59, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376339740239898004, guid: 11ffba29df14c054aa5a2695b18e9f59, type: 3}
       propertyPath: inventoryItems.Array.size
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4717,6 +4738,17 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 38952f94b3127034d8381805c7326de6, type: 2}
   m_BuildHeightMesh: 0
+--- !u!114 &795330526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6952699775814891030, guid: 809616c71a2de51409c722e9cb4aa4c3, type: 3}
+  m_PrefabInstance: {fileID: 1354593792}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d858d167606fc224d82a4bc5f17bb850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &801814572
 GameObject:
   m_ObjectHideFlags: 0
@@ -8886,8 +8918,12 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1267297931585051437, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
+      propertyPath: attackDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1267297931585051437, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
       propertyPath: inventoryItems.Array.size
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5972701951880260913, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
       propertyPath: m_Enabled
