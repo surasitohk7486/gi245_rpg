@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     private ItemData[] itemData;
     public ItemData[] ItemData { get { return itemData; } set { itemData = value; } }
 
-    private const int MAXSLOT = 16;
+    public const int MAXSLOT = 16;
 
     public static InventoryManager instance;
     void Awake()
@@ -22,15 +22,35 @@ public class InventoryManager : MonoBehaviour
     {
         Item item = new Item(itemData[id]);
 
-        if(character.InventoryItems.Count < MAXSLOT)
+        for (int i = 0; i < character.InventoryItems.Length; i++)
         {
-            character.InventoryItems.Add(item);
-            return true;
+            if (character.InventoryItems[i] == null)
+            {
+                character.InventoryItems[i] = item;
+                return true;
+            }
         }
-        else
+        Debug.Log("Inventory Full");
+        return false;
+    }
+
+    public void SaveItemInBag(int index, Item item)
+    {
+        if(PartyManager.instance.SelectChars.Count == 0)
         {
-            Debug.Log("Inventory Full");
-            return false;
+            return;
         }
+
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
+    }
+
+    public void RemoveItemInBag(int index)
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+        {
+            return;
+        }
+
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
     }
 }

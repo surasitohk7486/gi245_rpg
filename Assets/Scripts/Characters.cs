@@ -68,8 +68,8 @@ public abstract class Characters : MonoBehaviour
 
     [Header("Inventory")]
     [SerializeField]
-    protected List<Item> inventoryItems;
-    public List<Item> InventoryItems { get { return inventoryItems; } set { inventoryItems = value; } }
+    protected Item[] inventoryItems;
+    public Item[] InventoryItems { get { return inventoryItems; } set { inventoryItems = value; } }
 
     [SerializeField]
     protected Item mainWeapon;
@@ -93,6 +93,8 @@ public abstract class Characters : MonoBehaviour
     {
         vfxManager = vfxM;
         uiManager = uiM;
+
+        inventoryItems = new Item[16];
     }
 
     public void SetState(CharState s)
