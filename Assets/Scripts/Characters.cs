@@ -435,19 +435,4 @@ public abstract class Characters : MonoBehaviour
 
         SetState(CharState.WalkToNPC);
     }
-
-    protected void WalkToNPCUpdate()
-    {
-        float distance = Vector3.Distance(transform.position, curCharTarget.transform.position);
-
-        if(distance <= 2f)
-        {
-            navAgent.isStopped = true;
-            SetState(CharState.Idle);
-
-            Npc npc = curCharTarget.GetComponent<Npc>();
-
-            uiManager.PrepareDialogueBox(npc);
-        }
-    }
 }

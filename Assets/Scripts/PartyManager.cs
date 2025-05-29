@@ -16,6 +16,10 @@ public class PartyManager : MonoBehaviour
     private List<Quest> questList = new List<Quest>();
     public List<Quest> QuestList { get { return questList; } }
 
+    [SerializeField]
+    private int partyMoney = 1000;
+    public int PartyMoney { get { return partyMoney; } set { partyMoney = value; } }
+
     public static PartyManager instance;
 
     void Awake()
@@ -81,7 +85,7 @@ public class PartyManager : MonoBehaviour
         selectChars[0].CurMagicCast = selectChars[0].MagicSkills[i];
     }
 
-    public int FindIndexFromClass(CharacterController hero)
+    public int FindIndexFromClass(Characters hero)
     {
         for(int i = 0; i < members.Count; i++)
         {
@@ -108,11 +112,11 @@ public class PartyManager : MonoBehaviour
 
     public void UnSelectSingleHeroToggle(int i)
     {
-        if(selectChars.Count <= 1)
+        /*if(selectChars.Count <= 1)
         {
             UIManager.instance.ToggleAvatar[i].isOn = true;
             return;
-        }
+        }*/
 
         if(selectChars.Contains(members[i]))
         {

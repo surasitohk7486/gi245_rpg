@@ -16,5 +16,6 @@ MonoBehaviour:
   itemName: Bow
   type: 4
   icon: {fileID: 21300000, guid: c080b5fbbdabc7f478dc43fd022db849, type: 3}
-  power: 5
+  power: 10
   prefabID: 0
+  normalPrice: 30
