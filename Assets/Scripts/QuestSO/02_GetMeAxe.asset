@@ -16,19 +16,19 @@ MonoBehaviour:
   type: 0
   status: 0
   questName: Get Me a Staff
-  questDetail: Give Ben a Bow.
-  questItemId: 4
+  questDetail: Give Ben a Arrow.
+  questItemId: 3
   questDialogue:
   - Hello, adventures. How are you?
   - Can I ask you something?
-  - I need a Bow. Could you give it for me?
+  - I need a Axe. Could you give it for me?
   answerNext:
   - Hi, nice to meet you.
   - Go ahead, i'm listening.
   answerAccept: Yes, I shall find it for you.
   answerReject: Sorry, I couldn't help you.
-  rewardItemId: 5
+  rewardItemId: 1
   rewardExp: 150
-  questionInProgress: Have you gotten any Bow?
+  questionInProgress: Have you gotten any Axe?
   answerFinish: Here ti is.
   answerNotFinish: Not yet, please wait.

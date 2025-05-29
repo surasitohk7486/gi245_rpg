@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class LeftClick : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class LeftClick : MonoBehaviour
             if (EventSystem.current.IsPointerOverGameObject())
                 return;
 
-            ClearEverything();
+            //ClearEverything();
         }
 
         if(Input.GetMouseButton(0))
@@ -55,8 +56,10 @@ public class LeftClick : MonoBehaviour
 
     private void SelectCharacter(RaycastHit hit)
     {
+        ClearEverything();
+
         Characters hero = hit.collider.GetComponent<Characters>();
-        Debug.Log("Selected Char: " + hit.collider.gameObject);
+        //Debug.Log("Selected Char: " + hit.collider.gameObject);
 
         PartyManager.instance.SelectChars.Add(hero);
         hero.ToggleRingSelection(true);
@@ -87,6 +90,10 @@ public class LeftClick : MonoBehaviour
 
     private void ClearEverything()
     {
+        foreach (Toggle t in UIManager.instance.ToggleAvatar)
+        {
+            t.isOn = false;
+        }
         ClearRingSelection();
         PartyManager.instance.SelectChars.Clear();
     }

@@ -80,4 +80,56 @@ public class PartyManager : MonoBehaviour
         selectChars[0].IsMagicMode = true;
         selectChars[0].CurMagicCast = selectChars[0].MagicSkills[i];
     }
+
+    public int FindIndexFromClass(CharacterController hero)
+    {
+        for(int i = 0; i < members.Count; i++)
+        {
+            if (members[i] == hero)
+                return i;
+        }
+        return 0;
+    }
+
+    public void SelectSingleHeroByToggle(int i)
+    {
+        if(selectChars.Contains(members[i]))
+        {
+            members[i].ToggleRingSelection(true);
+            UIManager.instance.ShowMagicToggle();
+        }
+        else
+        {
+            selectChars.Add(members[i]);
+            members[i].ToggleRingSelection(true);
+            UIManager.instance.ShowMagicToggle();
+        }
+    }
+
+    public void UnSelectSingleHeroToggle(int i)
+    {
+        if(selectChars.Count <= 1)
+        {
+            UIManager.instance.ToggleAvatar[i].isOn = true;
+            return;
+        }
+
+        if(selectChars.Contains(members[i]))
+        {
+            selectChars.Remove(members[i]);
+            members[i].ToggleRingSelection(false);
+        }
+    }
+
+    public void RemoveHeroFromParty(int id)
+    {
+        if (id ==  -1 || id == 0)
+            return;
+
+        if(selectChars.Contains(members[id]))
+            selectChars.Remove(members[id]);
+
+        members.Remove(members[id]);
+    }
+
 }
