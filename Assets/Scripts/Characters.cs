@@ -12,7 +12,8 @@ public enum CharState
     WalkToMagicCast,
     MagicCast,
     Hit,
-    Die
+    Die,
+    WalkToNPC
 }
 
 public abstract class Characters : MonoBehaviour
@@ -21,6 +22,14 @@ public abstract class Characters : MonoBehaviour
 
     protected Animator anim;
     public Animator Anim { get { return anim; } }
+
+    [SerializeField]
+    protected Sprite avatarPic;
+    public Sprite AvatarPic { get { return avatarPic; } }
+
+    [SerializeField]
+    protected string charName;
+    public string CharName {  get { return charName; } }
 
     [SerializeField]
     protected CharState state;
@@ -33,6 +42,10 @@ public abstract class Characters : MonoBehaviour
     [SerializeField]
     protected int curHP = 10;
     public int CurHP { get { return curHP; } }
+
+    [SerializeField]
+    protected int maxHP = 100;
+    public int MaxHP { get { return maxHP; } }
 
     [SerializeField]
     protected Characters curCharTarget;
@@ -78,6 +91,21 @@ public abstract class Characters : MonoBehaviour
     [SerializeField]
     protected Item shield;
     public Item Shield { get { return shield; } set { shield = value; } }
+
+    [SerializeField]
+    protected Transform shieldHand;
+
+    [SerializeField]
+    protected GameObject shieldObj;
+
+    [SerializeField]
+    protected int defensePower = 0;
+
+    [SerializeField]
+    protected Transform weaponHand;
+
+    [SerializeField]
+    protected GameObject weaponObj;
 
     protected VFXManager vfxManager;
     protected UIManager uiManager;
@@ -233,7 +261,12 @@ public abstract class Characters : MonoBehaviour
         if(curHP <= 0 || state == CharState.Die)
             return;
 
-        curHP -= damage;
+        int damageAfter = damage - defensePower;
+
+        if (damageAfter < 0)
+            damageAfter = 0;
+
+        curHP -= damageAfter;
         if(curHP <= 0)
         {
             curHP = 0;
@@ -333,6 +366,86 @@ public abstract class Characters : MonoBehaviour
             SetState(CharState.MagicCast);
 
             MagicCast(curMagicCast);
+        }
+    }
+
+    public void Recover(int n)
+    {
+        curHP += n;
+
+        if(curHP > maxHP)
+        {
+            curHP = maxHP;
+        }
+    }
+
+    public void EquipShield(Item item)
+    {
+        shieldObj = Instantiate(invManager.ItemPrefab[item.PrefabID], shieldHand);
+
+        shieldObj.transform.localPosition = new Vector3(-8.5f, -4f, 3f);
+        shieldObj.transform.Rotate(-90f, 0f, 180f, Space.Self);
+
+        defensePower += item.Power;
+        shield = item;
+    }
+
+    public void UnEquipShield()
+    {
+        if(shield != null)
+        {
+            defensePower -= shield.Power;
+            shield = null;
+            Destroy(shieldObj);
+        }
+    }
+
+    public void EquipWeapon(Item item)
+    {
+        weaponObj = Instantiate(invManager.ItemPrefab[item.PrefabID], weaponHand);
+
+        weaponObj.transform.localPosition = new Vector3(6f, 6f, -8f);
+        weaponObj.transform.Rotate(4f, 90f, -97f, Space.Self);
+
+        attackDamage += item.Power;
+        mainWeapon = item;
+    }
+
+    public void UnEquipWeapon()
+    {
+        if (mainWeapon != null)
+        {
+            attackDamage -= mainWeapon.Power;
+            mainWeapon = null;
+            Destroy(weaponObj);
+        }
+    }
+
+    public void ToTalkToNPC(Characters npc)
+    {
+        if(curHP <= 0 || state == CharState.Die)
+            return;
+
+        curCharTarget = npc;
+
+        navAgent.SetDestination(npc.transform.position);
+        navAgent.isStopped = false;
+
+        SetState(CharState.WalkToNPC);
+    }
+
+    protected void WalkToNPCUpdate()
+    {
+        float distance = Vector3.Distance(transform.position, curCharTarget.transform.position);
+
+        if(distance <= 2f)
+        {
+            navAgent.isStopped = true;
+            SetState(CharState.Idle);
+
+            Npc npc = curCharTarget.GetComponent<Npc>();
+
+            uiManager.PrepareDialogueBox(npc);
         }
     }
 }

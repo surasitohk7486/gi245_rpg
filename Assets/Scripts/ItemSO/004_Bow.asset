@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   itemName: Bow
-  type: 2
+  type: 4
   icon: {fileID: 21300000, guid: c080b5fbbdabc7f478dc43fd022db849, type: 3}
   power: 5
+  prefabID: 0

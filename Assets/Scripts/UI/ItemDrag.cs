@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [SerializeField]
     private Item item;
@@ -15,6 +15,10 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     [SerializeField]
     private Image image;
     public Image Image { get { return image; } set { image = value; } }
+
+    private UIManager uiManager;
+    public UIManager UIManager { get {  return uiManager; } set { uiManager = value; } }
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -36,6 +40,25 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         Debug.Log("EndDrag");
         transform.SetParent(iconParent);
         image.raycastTarget = true;
+    }
+
+    private int FindIndexOfSlotParent()
+    {
+        int id = iconParent.GetComponent<InventorySlot>().ID;
+        return id;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            Debug.Log("Right Click on item");
+            if(item.Type == ItemType.Consumable)
+            {
+                uiManager.SetCurItemInUse(this, FindIndexOfSlotParent());
+                uiManager.ToggleItemDialog(true);
+            }
+        }
     }
 
 }
