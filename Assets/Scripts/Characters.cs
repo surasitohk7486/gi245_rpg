@@ -112,6 +112,7 @@ public abstract class Characters : MonoBehaviour
     protected VFXManager vfxManager;
     protected UIManager uiManager;
     protected InventoryManager invManager;
+    protected PartyManager partyManager;
 
   
     void Awake()
@@ -120,11 +121,12 @@ public abstract class Characters : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void charInit(VFXManager vfxM, UIManager uiM, InventoryManager invM)
+    public void CharInit(VFXManager vfxM, UIManager uiM, InventoryManager invM, PartyManager partyM)
     {
         vfxManager = vfxM;
         uiManager = uiM;
         invManager = invM;
+        partyManager = partyM;
 
         inventoryItems = new Item[InventoryManager.MAXSLOT];
     }

@@ -459,9 +459,9 @@ GameObject:
   - component: {fileID: 5972701951880260913}
   - component: {fileID: 1267297931585051437}
   - component: {fileID: 8167824155367645382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character_Goblin_Warrior_Male
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,11 +582,11 @@ MonoBehaviour:
   charName: Vision
   state: 0
   ringSelection: {fileID: 3865090309115903068}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
-  attackDamage: 3
+  attackDamage: 10
   attackCoolDown: 2
   attackTimer: 0
   findingRange: 20
@@ -610,6 +610,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -617,19 +618,21 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 444796}
   shieldObj: {fileID: 0}
   defensePower: 0
   weaponHand: {fileID: 456588}
   weaponObj: {fileID: 0}
   exp: 0
-  level: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  charisma: 0
+  level: 1
+  nextExp: 30
+  strength: 19
+  dexterity: 8
+  constitution: 17
+  intelligence: 8
+  wisdom: 5
+  charisma: 10
 --- !u!114 &8167824155367645382
 MonoBehaviour:
   m_ObjectHideFlags: 0

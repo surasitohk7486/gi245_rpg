@@ -1192,9 +1192,9 @@ GameObject:
   - component: {fileID: 927480398466644927}
   - component: {fileID: 3376339740239898004}
   - component: {fileID: 7031132511787998035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character_Hero_Knight_Female
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   charName: Scalet Witch
   state: 0
   ringSelection: {fileID: 8744283111604483548}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -1343,6 +1343,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -1350,19 +1351,21 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 479758}
   shieldObj: {fileID: 0}
   defensePower: 0
   weaponHand: {fileID: 475994}
   weaponObj: {fileID: 0}
   exp: 0
-  level: 0
-  strength: 0
-  dexterity: 0
-  constitution: 0
-  intelligence: 0
-  wisdom: 0
-  charisma: 0
+  level: 1
+  nextExp: 30
+  strength: 12
+  dexterity: 10
+  constitution: 8
+  intelligence: 19
+  wisdom: 17
+  charisma: 15
 --- !u!114 &7031132511787998035
 MonoBehaviour:
   m_ObjectHideFlags: 0

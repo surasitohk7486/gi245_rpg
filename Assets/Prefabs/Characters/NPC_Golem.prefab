@@ -2967,7 +2967,7 @@ MonoBehaviour:
   charName: Ben
   state: 0
   ringSelection: {fileID: 0}
-  curHP: 10
+  curHP: 100
   maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
@@ -2995,6 +2995,7 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shield:
     id: 0
     itemName: 
@@ -3002,12 +3003,16 @@ MonoBehaviour:
     icon: {fileID: 0}
     power: 0
     prefabID: 0
+    normalPrice: 0
   shieldHand: {fileID: 0}
   shieldObj: {fileID: 0}
   defensePower: 0
   weaponHand: {fileID: 0}
   weaponObj: {fileID: 0}
   questToGive: []
+  isShopKeeper: 0
+  shopItems: []
+  npcMoney: 3000
 --- !u!114 &4047540656637564843
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class EnemyManager : MonoBehaviour
     {
         foreach (Characters m in monsters)
         {
-            m.charInit(VFXManager.instance, UIManager.instance, InventoryManager.instance);
+            m.CharInit(VFXManager.instance, UIManager.instance, InventoryManager.instance, PartyManager.instance);
         }
 
         InventoryManager.instance.AddItem(monsters[0], 0);
