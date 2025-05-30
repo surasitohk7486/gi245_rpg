@@ -509,7 +509,7 @@ Animator:
   m_GameObject: {fileID: 112422}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80d89f40bd6df7e4aa3ee59026eb8e3a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -624,6 +624,7 @@ MonoBehaviour:
   defensePower: 0
   weaponHand: {fileID: 456588}
   weaponObj: {fileID: 0}
+  prefabId: 1
   exp: 0
   level: 1
   nextExp: 30

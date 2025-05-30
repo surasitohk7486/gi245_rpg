@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Hero : Characters
 {
+    [SerializeField]
+    private int prefabId;
+    public int PrefabId { get { return prefabId; } }
+
     [SerializeField] 
     private int exp;
     public int Exp { get { return exp; } set { exp = value; } }
@@ -133,10 +137,10 @@ public class Hero : Characters
 
             switch(level)
             {
-                case 5: magicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));
+                case 5: magicSkills.Add(new Magic(vfxManager.MagicData[0]));
                     uiManager.ShowMagicToggle();
                     break;
-                case 10: magicSkills.Add(new Magic(VFXManager.instance.MagicData[1]));
+                case 10: magicSkills.Add(new Magic(vfxManager.MagicData[1]));
                     uiManager.ShowMagicToggle(); break;
                     break;
             }

@@ -15,7 +15,18 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        GeneratePlayerHero();
+        if(Setting.isNewGame)
+        {
+            Setting.isNewGame = false;
+            GeneratePlayerHero();
+            AudioManager.instance.PlayBGM(1);
+        }
+
+        if(Setting.isWarping)
+        {
+            Setting.isWarping = false;
+            WarpPlayers();
+        }
     }
 
     private void GeneratePlayerHero()
@@ -29,5 +40,17 @@ public class GameManager : MonoBehaviour
 
         Characters hero = heroObj.GetComponent<Characters>();
         PartyManager.instance.Members.Add(hero);
+
+        hero.CharInit(VFXManager.instance, UIManager.instance,
+            InventoryManager.instance, PartyManager.instance);
+
+        InventoryManager.instance.AddItem(hero, 0);
+        InventoryManager.instance.AddItem(hero, 2);
+        InventoryManager.instance.AddItem(hero, 5);
+    }
+
+    private void WarpPlayers()
+    {
+        PartyManager.instance.LoadAllHeroData();
     }
 }

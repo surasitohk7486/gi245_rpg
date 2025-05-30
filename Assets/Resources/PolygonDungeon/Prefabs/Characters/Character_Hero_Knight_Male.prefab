@@ -2845,7 +2845,7 @@ GameObject:
   - component: {fileID: 4383781409879383414}
   - component: {fileID: 5843209591289404600}
   - component: {fileID: 4047540656637564843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character_Hero_Knight_Male
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -2940,13 +2940,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6567cebd5fd614ab57fbd69e77a982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avatarPic: {fileID: 0}
+  charName: 
   state: 0
   ringSelection: {fileID: 0}
   curHP: 10
+  maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
+  attackDamage: 3
   attackCoolDown: 2
   attackTimer: 0
+  findingRange: 20
+  magicSkills: []
+  curMagicCast:
+    id: 0
+    name: 
+    icon: {fileID: 0}
+    range: 0
+    power: 0
+    loadTime: 0
+    shootTime: 0
+    loadId: 0
+    shootId: 0
+  isMagicMode: 0
+  inventoryItems: []
+  mainWeapon:
+    id: 0
+    itemName: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+    normalPrice: 0
+  shield:
+    id: 0
+    itemName: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+    normalPrice: 0
+  shieldHand: {fileID: 0}
+  shieldObj: {fileID: 0}
+  defensePower: 0
+  weaponHand: {fileID: 0}
+  weaponObj: {fileID: 0}
+  prefabId: 0
+  exp: 0
+  level: 0
+  nextExp: 0
+  strength: 0
+  dexterity: 0
+  constitution: 0
+  intelligence: 0
+  wisdom: 0
+  charisma: 0
 --- !u!136 &5843209591289404600
 CapsuleCollider:
   m_ObjectHideFlags: 0

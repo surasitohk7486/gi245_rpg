@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4688591915851416782}
   - component: {fileID: 6930884051117466641}
   - component: {fileID: 9102652709697737881}
+  - component: {fileID: 3662893410325006070}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -87,6 +88,13 @@ MonoBehaviour:
   questList: []
   partyMoney: 1000
   totalExp: 0
+  heroData:
+  - {fileID: 11400000, guid: d46ca3cec1d0da547bf6b97d61d125a7, type: 2}
+  - {fileID: 11400000, guid: 15a66e8273702f840a8994b37bd498b0, type: 2}
+  - {fileID: 11400000, guid: 6244dc3c5dd6c7c439acee1935dd68c5, type: 2}
+  - {fileID: 11400000, guid: db05747742cb93b489f077bcd5545e02, type: 2}
+  - {fileID: 11400000, guid: ec131e27b1016a04780678dde375a6be, type: 2}
+  - {fileID: 11400000, guid: 8554ecdda9b55554f9eceb3d17aa40a9, type: 2}
 --- !u!114 &8673318538414807814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,3 +211,16 @@ MonoBehaviour:
   heroPrefabs:
   - {fileID: 131680, guid: 11ffba29df14c054aa5a2695b18e9f59, type: 3}
   - {fileID: 112422, guid: 8cd752dc36d412b4bba2efd06775153a, type: 3}
+--- !u!114 &3662893410325006070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550658426027109065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd97e9f5848410546bdef0c9b3f06462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterPoints: []
